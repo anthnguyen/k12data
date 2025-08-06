@@ -79,9 +79,9 @@ const PipelineVisualization = () => {
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-8 max-w-6xl mx-auto">
+        <div className="flex flex-col lg:flex-row gap-12 max-w-6xl mx-auto">
           {/* Side Menu */}
-          <div className="lg:w-64 flex-shrink-0">
+          <div className="lg:w-32 flex-shrink-0">
             <div className="relative">
               {/* Vertical connecting line */}
               <div className="space-y-4">

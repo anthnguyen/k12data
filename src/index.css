@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 13% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 13% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 220 13% 8%;
+
+    --secondary: 220 13% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 13% 15%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 220 13% 15%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 20%;
+    --input: 220 13% 20%;
+    --ring: 210 40% 98%;
+
+    --radius: 0.5rem;
+
+    /* Brand colors */
+    --brand-gradient: linear-gradient(135deg, 220 50% 20%, 210 50% 30%, 200 60% 40%);
+--hero-gradient: radial-gradient(ellipse 1200px 900px at 15% 25%, hsl(0 0% 2%) 0%, hsl(0 0% 0%) 30%, transparent 65%),
+                radial-gradient(ellipse 900px 600px at 85% 15%, hsl(0 0% 1%) 0%, hsl(0 0% 6%) 25%, transparent 55%),
+                radial-gradient(ellipse 1050px 750px at 25% 85%, hsl(0 0% 1%) 0%, hsl(0 0% 0%) 35%, transparent 70%),
+                radial-gradient(ellipse 750px 1050px at 75% 75%, hsl(0 0% 2%) 0%, hsl(0 0% 5%) 20%, transparent 50%),
+                radial-gradient(ellipse 600px 450px at 60% 40%, hsl(0 0% 0%) 0%, hsl(0 0% 7%) 15%, transparent 45%),
+                radial-gradient(ellipse 450px 900px at 90% 60%, hsl(0 0% 1%) 0%, transparent 40%),
+                radial-gradient(ellipse 900px 450px at 10% 70%, hsl(0 0% 0%) 0%, transparent 35%),
+                radial-gradient(ellipse 800px 1200px at 50% 100%, hsl(0 0% 9%) 0%, hsl(0 0% 0%) 30%, transparent 60%),
+                radial-gradient(ellipse 1400px 700px at 30% 0%, hsl(0 0% 8%) 0%, hsl(0 0% 0%) 40%, transparent 80%),
+                linear-gradient(135deg, hsl(0 0% 0%) 0%, hsl(0 0% 1%) 15%, hsl(0 0% 4%) 30%, hsl(0 0% 0%) 45%, hsl(0 0% 6%) 60%, hsl(0 0% 1%) 75%, hsl(0 0% 8%) 90%, hsl(0 0% 7%) 100%);
+
+/* Apply with chromatic aberration */
+background: var(--hero-gradient);
+position: relative;
+
+&::before {
+ content: '';
+ position: absolute;
+ inset: 0;
+  background: radial-gradient(ellipse 802px 602px at 15.2% 25.1%, hsl(0 0% 2%) 0%, hsl(0 0% 0%) 30%, transparent 65%),
+              radial-gradient(ellipse 602px 402px at 85.1% 15.2%, hsl(0 0% 1%) 0%, hsl(0 0% 6%) 25%, transparent 55%),
+              radial-gradient(ellipse 702px 502px at 25.1% 85.2%, hsl(0 0% 1%) 0%, hsl(0 0% 0%) 35%, transparent 70%);
+ mix-blend-mode: screen;
+ opacity: 0.1;
+ transform: translate(0.4px, 0);
+ pointer-events: none;
+}
+
+&::after {
+ content: '';
+ position: absolute;
+ inset: 0;
+  background: radial-gradient(ellipse 798px 598px at 14.8% 24.9%, hsl(0 0% 2%) 0%, hsl(0 0% 0%) 30%, transparent 65%),
+              radial-gradient(ellipse 598px 398px at 84.9% 14.8%, hsl(0 0% 1%) 0%, hsl(0 0% 6%) 25%, transparent 55%),
+              radial-gradient(ellipse 698px 498px at 24.9% 84.8%, hsl(0 0% 1%) 0%, hsl(0 0% 0%) 35%, transparent 70%);
+ mix-blend-mode: screen;
+ opacity: 0.08;
+ transform: translate(-0.4px, 0);
+ pointer-events: none;
+}
+    --shadow-glow: 0 0 40px hsl(210 50% 40% / 0.3);
+    --shadow-elegant: 0 10px 30px -10px hsl(220 13% 5% / 0.5);
+
+    --sidebar-background: 220 13% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 210 40% 98%;
+    --sidebar-primary-foreground: 220 13% 8%;
+    --sidebar-accent: 220 13% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 220 13% 20%;
+    --sidebar-ring: 210 40% 98%;
+  }
+
+  /* Military card hover effects */
+  .military-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .military-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6), inset 0 1px 3px rgba(0,0,0,0.3), 0 0 20px rgba(150,150,150,0.1) !important;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Rajdhani', sans-serif;
+  }
+}
